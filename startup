@@ -1,0 +1,14 @@
+#! /bin/bash
+clear
+echo "Enter your password for 'sudo' tasks that need to occur"
+read -s password
+echo -E "Thank you! Continuing..."
+# Updating
+echo $password | sudo apt-get update && sudo apt-get upgrade -y
+# Installing dependencies
+echo $password | sudo apt-get install -y build-essential git htop g++ libboost-all-dev libdb++-dev build-essential libgmp-dev libssl-dev
+# Fetching the miner source
+echo $password | sudo wget http://fistfulofbitcoins.com/miners/jhprotominer-yvg1900-M7h-linux64-core2.tgz
+# Unpacking the miner
+echo $password | sudo tar -xvf jhprotominer-yvg1900-M7h-linux64-core2.tgz
+# 
