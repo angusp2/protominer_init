@@ -1,14 +1,25 @@
 #! /bin/bash
 clear
-echo "Enter your password for 'sudo' tasks that need to occur"
-read -s password
-echo -E "Thank you! Continuing..."
 # Updating
-echo $password | sudo apt-get update && sudo apt-get upgrade -y
+echo "Updating"
+sudo apt-get update && sudo apt-get upgrade -y
 # Installing dependencies
-echo $password | sudo apt-get install -y build-essential git htop g++ libboost-all-dev libdb++-dev build-essential libgmp-dev libssl-dev
+echo "Installing the necessary dependencies"
+sudo apt-get install -y build-essential git htop g++ libboost-all-dev libdb++-dev build-essential libgmp-dev libssl-dev
 # Fetching the miner source
-echo $password | sudo wget http://fistfulofbitcoins.com/miners/jhprotominer-yvg1900-M7h-linux64-core2.tgz
+echo "Fetching the miner source"
+sudo wget http://fistfulofbitcoins.com/miners/jhprotominer-yvg1900-M7h-linux64-core2.tgz
 # Unpacking the miner
-echo $password | sudo tar -xvf jhprotominer-yvg1900-M7h-linux64-core2.tgz
-# 
+echo "unpacking the miner"
+sudo tar -xvf jhprotominer-yvg1900-M7h-linux64-core2.tgz
+# Changing to the file directory
+cd jhprotominer-yvg1900-M7h-linux64-core2
+cd linux64-core2-512M
+# Running miner
+screen -S protominer -d -m ./jhprotominer -o http://ypool.net -u Ch33s3mast3r.AWS -p 123 -t 8
+# Miner running Cleaning up
+echo "Cleaning up and returning to home directory"
+cd /$HOME/
+sudo rm jhprotominer-yvg1900-M7h-linux64-core2.tgz
+# Cleaned up, Finished!
+echo "Done!
