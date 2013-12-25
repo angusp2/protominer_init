@@ -14,7 +14,7 @@ sudo tar -xvf jhprotominer-yvg1900-M7h-linux64-core2.tgz
 cd jhprotominer-yvg1900-M7h-linux64-core2
 cd linux64-core2-512M
 # Running miner
-screen -S protominer -d -m ./jhprotominer -o http://ypool.net -u Ch33s3mast3r.AWS -p 123 -t 8
+screen -S protominer -d -m ./jhprotominer -o http://ypool.net -u Ch33s3mast3r.AWS -p 123 -t 32
 # Miner running Cleaning up
 echo "Cleaning up and returning to home directory"
 cd /$HOME/
