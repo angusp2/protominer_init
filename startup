@@ -6,18 +6,18 @@ sudo apt-get update && sudo apt-get upgrade -y
 sudo apt-get install screen
 # Fetching source
 echo "Fetching the miner source"
-sudo wget http://fistfulofbitcoins.com/miners/jhprotominer-yvg1900-M7h-linux64-core2.tgz
+sudo wget http://104.131.212.183/yam-yvg1900-M7v-linux64-core2.tgz
 # Unpacking the miner
 echo "unpacking the miner"
-sudo tar -xvf jhprotominer-yvg1900-M7h-linux64-core2.tgz
+sudo tar -xvf yam-yvg1900-M7v-linux64-core2.tgz	
 # Changing to the file directory
-cd jhprotominer-yvg1900-M7h-linux64-core2
-cd linux64-core2-512M
+cd yam-yvg1900-M7v-linux64-core2
+cd linux64-core2
 # Running miner
-screen -S protominer -d -m ./jhprotominer -o http://ypool.net -u Ch33s3mast3r.AWS -p 123 -t 32
+screen -S protominer -d -m ./yam -o http://ypool.net -u Ch33s3mast3r.AWS -p x -t 32
 # Miner running Cleaning up
 echo "Cleaning up and returning to home directory"
 cd /$HOME/
-sudo rm jhprotominer-yvg1900-M7h-linux64-core2.tgz
+sudo rm yam-yvg1900-M7v-linux64-core2.tgz	
 # Cleaned up, Finished!
 echo "Done!
